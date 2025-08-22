@@ -66,7 +66,7 @@ def check_scores():
         return messages
     return ["❌ ไม่สามารถดึงข้อมูลได้"]
 
-# ตั้งค่า Loop ให้เช็คทุก 10 วินาที
+# ตั้งค่า Loop ให้เช็คทุก 5 นาที
 @bot.event
 async def on_ready():
     print(f"✅ บอท {bot.user} ทำงานแล้ว!")
@@ -75,7 +75,7 @@ async def on_ready():
         for msg in result_messages:
             print(msg)  # แสดงผลใน Console
             await send_discord_notify(msg)
-        time.sleep(10)  # เช็คทุก 10 วินาที
+        time.sleep(300)  # เช็คทุก 5 นาที
 
 # รัน Discord Bot
 bot.run(DISCORD_TOKEN)
